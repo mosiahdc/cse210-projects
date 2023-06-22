@@ -4,6 +4,18 @@ using System.IO;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
+
+    // Populate local List
+    public List<int> PopulateEntry()
+    {
+        List<int> tempEntryNumber = new List<int>();
+        foreach (Entry entry in _entries)
+        {
+            tempEntryNumber.Add(entry._entryNumber);
+        }
+
+        return tempEntryNumber;
+    }
     
     // Generate Random Number
     // As Entry Number
@@ -11,11 +23,8 @@ public class Journal
     {
         Random random = new Random();
 
-        List<int> tempNumber = new List<int>();
-        foreach (Entry entry in _entries)
-        {
-            tempNumber.Add(entry._entryNumber);
-        }
+        List<int> entryNumberList = PopulateEntry();
+        Console.WriteLine(entryNumberList.Count);
 
         int randomNumber;
         
@@ -23,7 +32,7 @@ public class Journal
         {
             randomNumber= random.Next(1001, 10000);
         } 
-        while (tempNumber.Contains(randomNumber));
+        while (entryNumberList.Contains(randomNumber));
 
         return randomNumber;
     }
@@ -37,14 +46,11 @@ public class Journal
     public void DeleteEntry(int removeEntry)
     {
 
-        List<int> tempEntries = new List<int>();
-        
-        foreach (Entry entry in _entries)
-        {
-            tempEntries.Add(entry._entryNumber);
-        }
+        List<int> entryNumberList = PopulateEntry();
 
-        int entryIndex = tempEntries.IndexOf(removeEntry);
+        Console.WriteLine(entryNumberList.Count);
+
+        int entryIndex = entryNumberList.IndexOf(removeEntry);
         _entries.RemoveAt(entryIndex);
     }
 

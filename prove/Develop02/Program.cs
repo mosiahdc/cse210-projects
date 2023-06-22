@@ -53,18 +53,14 @@ class Program
                 if (journal._entries.Count > 0)
                 {   
                     int removeEntry;
-                    List<int> tempEntryNumber = new List<int>();
 
-                    foreach (Entry entry in journal._entries)
-                    {
-                        tempEntryNumber.Add(entry._entryNumber);
-                    }
-
+                    List<int> entryNumberList = journal.PopulateEntry();
+                    Console.WriteLine(entryNumberList.Count);
 
                     Console.Write("Delete Entry #");
                     removeEntry = int.Parse(Console.ReadLine());
                     
-                    if (!tempEntryNumber.Contains(removeEntry))
+                    if (!entryNumberList.Contains(removeEntry))
                     {
                         Console.Write($"There is no Entry #{removeEntry}\n");
                     }
