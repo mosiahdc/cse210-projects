@@ -24,7 +24,6 @@ public class Journal
         Random random = new Random();
 
         List<int> entryNumberList = PopulateEntry();
-        Console.WriteLine(entryNumberList.Count);
 
         int randomNumber;
         
