@@ -6,8 +6,6 @@ public class Scripture{
 
     private List<int> _wordsIndex = new List<int>();
 
-    //Scripture scripture;
-
     public Scripture()
     {
 
