@@ -7,17 +7,24 @@ public class Program
     {
 
         string userInput = "";
-        Reference reference = new Reference("Proverbs", 3, 5, 6);
-        Scripture scripture = new Scripture(reference, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
+        Scripture scripture = new Scripture();
 
-        while (userInput != "quit")
-        {
+        scripture.LoadFromFile();
+        do{
             Console.WriteLine(scripture.GetDisplayText());
             Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish");
             userInput = Console.ReadLine();
-            scripture.HideRandomWords(5);
+            if (scripture.IsCompletelyHidden() == true)
+            {
+                break;
+            }
+            else
+            {
+                scripture.GenerateRandomNumber();
+            }
         }
+        while (userInput != "quit");
     }   
 
 }
