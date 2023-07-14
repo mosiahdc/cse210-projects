@@ -23,6 +23,12 @@ class Program
 
         videos.Add(video2);    
 
+        Video video3 = new Video("Rarest Things On Earth!", "Beast Reacts", 489);
+        video3.AddComment("@WestyC", "respect to that delivery man for going the extra mile to connect with his customers.");
+        video3.AddComment("@justgrandtheftauto", "Mr Beast himself can be the rareest thing on earth.");
+
+        videos.Add(video3);
+
         foreach (Video video in videos)
         {
             Console.WriteLine("----------");
