@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-
         List<Event> events = new List<Event>();
 
         Address lectureAddress = new Address("2909 Stratford Drive", "Kailua", "Hawaii", "USA");
