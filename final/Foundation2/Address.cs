@@ -4,11 +4,11 @@ public class Address
 {
     private string _street, _city, _state, _country;
 
-    public Address(string street, string city, string stateOrProvince, string country)
+    public Address(string street, string city, string state, string country)
     {
         _street = street;
         _city = city;
-        _state = stateOrProvince;
+        _state = state;
         _country = country;
     }
 
