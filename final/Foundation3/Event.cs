@@ -25,7 +25,7 @@ public class Event
         return GetStandardDetails();
     }
 
-    public virtual string GetShortDescription()
+    public string GetShortDescription()
     {
         return $"Event: {_title} ({_type})\nDate: {_date} @ {_time}";
     }
