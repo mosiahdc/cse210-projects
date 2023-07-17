@@ -11,6 +11,11 @@ public abstract class Activity
         _length = length;
     }
 
+    public int GetLength()
+    {
+        return _length;
+    }
+
     public abstract double GetDistance();
     public abstract double GetSpeed();
     public abstract double GetPace();

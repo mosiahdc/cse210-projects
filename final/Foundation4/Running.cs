@@ -1,13 +1,10 @@
 using System;
 
-
 public class Running : Activity
 {
     private double _distance;
-    private int _length;
     public Running(DateTime date, int length, double distance) : base (date, length)
     {
-        _length = length;
         _distance = distance;
     }
 
@@ -17,12 +14,12 @@ public class Running : Activity
     }
     public override double GetSpeed()
     {
-       return (_distance / _length) * 60;
+       return (_distance / GetLength()) * 60;
     }
 
     public override double GetPace()
     {
-        return _length / _distance;
+        return GetLength() / _distance;
     }
 
     public override string GetSummary()

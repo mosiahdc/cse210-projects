@@ -2,11 +2,10 @@ using System;
 
 public class Swimming : Activity
 {
-    private int _lap, _length;
+    private int _lap;
 
     public Swimming(DateTime date, int length, int lap) : base (date, length)
     {
-        _length = length;
         _lap = lap;
     }
 
@@ -17,12 +16,12 @@ public class Swimming : Activity
 
     public override double GetSpeed()
     {
-        return (GetDistance() / _length ) * 60;
+        return (GetDistance() / GetLength() ) * 60;
     }
 
     public override double GetPace()
     {
-        return _length / GetDistance();
+        return GetLength() / GetDistance();
     }
 
     public override string GetSummary()

@@ -3,16 +3,14 @@ using System;
 public class Cycling : Activity
 {
     private double _speed;
-    private int _length;
     public Cycling(DateTime date, int length, double speed) : base (date, length)
     {
-        _length = length;
         _speed = speed;
     }
 
     public override double GetDistance()
     {
-        return (_speed * _length) / 60;
+        return (_speed * GetLength()) / 60;
     }  
     
     public override double GetSpeed()
@@ -22,7 +20,7 @@ public class Cycling : Activity
 
     public override double GetPace()
     {
-        return _length / GetDistance();
+        return GetLength() / GetDistance();
     }
 
     public override string GetSummary()
