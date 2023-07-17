@@ -27,5 +27,4 @@ public class Cycling : Activity
     {
         return $"{base.GetSummary()} - Distance: {GetDistance():F1} miles, Speed: {GetSpeed():F1} mph, Pace: {GetPace():F1} min per mile";
     }    
-  
 }
