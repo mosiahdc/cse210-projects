@@ -16,7 +16,7 @@ class Program
         Address address1 = new Address("567 Hilltop Road", "Olympia", "Washington", "USA");
         Customer customer1 = new Customer("Amanda Dark", address1);
 
-        Address address2 = new Address("29 Stroude Road", "Sissinghurst", "", "UK");
+        Address address2 = new Address("29 Stroude Road", "Sissinghurst", "", "United Kingdom");
         Customer customer2 = new Customer("Hanif Shah", address2);
 
         Order order1 = new Order(customer1);
